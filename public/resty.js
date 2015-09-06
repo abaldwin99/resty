@@ -11,8 +11,11 @@ app.controller('restyController', function ($scope, Post) {
     resty.go = 5;
 
     var posts = Post.query(function () {
-        console.log(posts);
         resty.go = posts;
+    });
+
+    var onePost = Post.get({id: 1}, function () {
+        console.log(onePost.title)
     });
 
 
