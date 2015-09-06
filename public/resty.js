@@ -14,16 +14,18 @@ app.controller('restyController', function ($scope, Post) {
         resty.go = posts;
     });
 
-    var onePost = Post.get({id: 1}, function () {
+    var onePost = Post.get({
+        id: 1
+    }, function () {
         console.log(onePost.title)
     });
 
     var newPost = new Post();
     newPost.data = {
-      "title": "asdf",
-      "author": "asdf",
+        "title": "asdf",
+        "author": "asdf",
     }
-    Post.save(newPost, function() {
+    Post.save(newPost, function () {
         console.log('saved')
     });
 
