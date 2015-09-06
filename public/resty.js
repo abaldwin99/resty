@@ -18,6 +18,14 @@ app.controller('restyController', function ($scope, Post) {
         console.log(onePost.title)
     });
 
+    var newPost = new Post();
+    newPost.data = {
+      "title": "asdf",
+      "author": "asdf",
+    }
+    Post.save(newPost, function() {
+        console.log('saved')
+    });
 
 
 });
