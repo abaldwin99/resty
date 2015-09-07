@@ -14,44 +14,52 @@ app.factory('Review', function ($resource) {
 
 app.controller('restyController', function ($scope, Review) {
     var resty = this;
-    resty.go = 5;
 
-    var reviews = Review.query(function () {
-        resty.go = reviews;
-    });
+    resty.getAllReviews = function () {
+        var reviews = Review.query(function () {
+            resty.reviews = reviews;
+        });
+    }
 
-    var oneReview = Review.get({
-        id: 2
-    }, function () {
-        console.log(oneReview.title);
-    });
+    //    var oneReview = Review.get({
+    //        id: 2
+    //    }, function () {
+    //        console.log(oneReview.title);
+    //    });
 
-    newReview = {
-        "title": "Awesome",
-        "author": "Bob",
-        "body": "Best product ever",
-        "rating": 5
-    };
-    Review.save(newReview, function () {
-        console.log('saved');
-    });
+    resty.postNewReview = function (newReview) {
+        //     newReview = {
+        //        "title": "Awesome",
+        //        "author": "Bob",
+        //        "body": "Best product ever",
+        //        "rating": 5
+        //    };
 
-    var updateReview = Review.get({
-        id: 4
-    }, function () {
-        updateReview.title = 'something else';
+        Review.save(newReview, function () {
+            getAllReviews();
+        });
+    }
+
+
+    resty.updateReview = function (review) {
         updateReview.$update(function () {
-            console.log('updated id 1');
+            getAllReviews();
         });
-    });
+    }
 
-    var deleteReview = Review.get({
-        id: 2
-    }, function () {
-        deleteReview.$delete(function () {
-            console.log('id 3 is deleted');
+
+
+    resty.deleteReview = function (reviewId) {
+        var review = Review.get({
+            id: reviewId
+        }, function () {
+            review.$delete(function () {
+                getAllReviews();
+            });
         });
-    });
+    }
 
+    //Init on page load
+    resty.getAllReviews();
 
 });

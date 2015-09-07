@@ -59,6 +59,29 @@
                     <br> All you get is this text and a mostly barebones HTML document.</p>
 
                 <h2>go: {{resty.go}}</h2>
+
+
+                <div class="jumbotron" ng-repeat="review in resty.reviews">
+                    <div class="container">
+                        <h1>{{review.title}}</h1>
+                        <h2>Author: {{review.author}}</h2>
+                        <p>{{review.body}}</p>
+                        <span class="glyphicon" ng-class="(review.rating >= 1) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
+                        <span class="glyphicon" ng-class="(review.rating >= 2) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
+                        <span class="glyphicon" ng-class="(review.rating >= 3) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
+                        <span class="glyphicon" ng-class="(review.rating >= 4) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
+                        <span class="glyphicon" ng-class="(review.rating >= 5) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
+
+                        <div class="row">
+                            <p><a class="btn btn-primary btn-lg pull-right" href="#" role="button">Edit</a></p>
+                        </div>
+                        <div class="row">
+                            <p><a class="btn btn-danger btn-lg pull-right" href="#" role="button">Delete</a></p>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
