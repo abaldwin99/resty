@@ -26,5 +26,7 @@ Description of the books used in the demo data comes from wikipedia.
 Thank you to the authors of the following pages...
 
 https://en.wikipedia.org/wiki/Nineteen_Eighty-Four
+
 https://en.wikipedia.org/wiki/Of_Mice_and_Men
+
 https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(novel)
