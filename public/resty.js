@@ -1,4 +1,4 @@
-var app = angular.module('restyApp', ['ngRoute', 'ngResource']);
+var app = angular.module('restyApp', ['ngResource']);
 
 
 app.factory('Review', function ($resource) {
