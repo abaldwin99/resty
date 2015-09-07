@@ -135,7 +135,7 @@
                         <span class="glyphicon" ng-class="(review.rating >= 5) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
 
                         <div class="row">
-                            <a class="btn btn-primary btn-lg pull-right" role="button">Edit</a>
+                            <a class="btn btn-primary btn-lg pull-right" role="button" ng-click="resty.updateReview(review)">Edit</a>
                         </div>
                         <div class="row">
                             <a class="btn btn-danger btn-lg pull-right" role="button" ng-click="resty.deleteReview(review)">Delete</a>

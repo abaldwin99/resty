@@ -31,7 +31,12 @@ app.controller('restyController', function ($scope, Review) {
     }
 
     resty.updateReview = function (review) {
-        updateReview.$update(function () {
+        review.title = prompt('Title', review.title)
+        review.author = prompt('Author', review.author)
+        review.body = prompt('Body', review.body)
+        review.rating = prompt('Rating', review.rating)
+
+        review.$update(function () {
             resty.getAllReviews();
         });
     }
