@@ -54,12 +54,21 @@
         <div class="row row-centered">
             <div class="col-xs-12 col-centered text-center">
 
-                <h1>Bootstrap starter template</h1>
-                <p class="lead">Use this document as a way to quickly start any new project.
-                    <br> All you get is this text and a mostly barebones HTML document.</p>
+                <p class="lead">This is a very basic bare bones examples of interfacing with a REST api. All basic CRUD functions (Create, Return, Update, Destory) are used. Our example lets users create a collection of book reviews.</p>
 
-                <h2>go: {{resty.go}}</h2>
+                <div class="jumbotron">
+                    <div class="container">
+                        <h2>Create new review</h2>
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
 
+                        <div class="row">
+                            <a class="btn btn-success btn-lg pull-right" href="#" role="button">Submit</a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="jumbotron" ng-repeat="review in resty.reviews">
                     <div class="container">
@@ -73,10 +82,10 @@
                         <span class="glyphicon" ng-class="(review.rating >= 5) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
 
                         <div class="row">
-                            <p><a class="btn btn-primary btn-lg pull-right" href="#" role="button">Edit</a></p>
+                            <a class="btn btn-primary btn-lg pull-right" href="#" role="button">Edit</a>
                         </div>
                         <div class="row">
-                            <p><a class="btn btn-danger btn-lg pull-right" href="#" role="button" ng-click="resty.deleteReview(review)">Delete</a></p>
+                            <a class="btn btn-danger btn-lg pull-right" href="#" role="button" ng-click="resty.deleteReview(review)">Delete</a>
                         </div>
 
                     </div>
