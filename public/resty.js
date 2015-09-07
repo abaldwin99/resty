@@ -49,13 +49,9 @@ app.controller('restyController', function ($scope, Review) {
 
 
 
-    resty.deleteReview = function (reviewId) {
-        var review = Review.get({
-            id: reviewId
-        }, function () {
-            review.$delete(function () {
-                getAllReviews();
-            });
+    resty.deleteReview = function (review) {
+        review.$delete(function () {
+            resty.getAllReviews();
         });
     }
 
