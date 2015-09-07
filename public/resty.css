@@ -1,0 +1,7 @@
+.new-review-stars > a:hover {
+    text-decoration: none;
+}
+
+.new-review-stars > a {
+    color: black;
+}

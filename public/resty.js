@@ -15,39 +15,26 @@ app.factory('Review', function ($resource) {
 app.controller('restyController', function ($scope, Review) {
     var resty = this;
 
+    resty.newReview = {};
+
     resty.getAllReviews = function () {
         var reviews = Review.query(function () {
             resty.reviews = reviews;
         });
     }
 
-    //    var oneReview = Review.get({
-    //        id: 2
-    //    }, function () {
-    //        console.log(oneReview.title);
-    //    });
-
-    resty.postNewReview = function (newReview) {
-        //     newReview = {
-        //        "title": "Awesome",
-        //        "author": "Bob",
-        //        "body": "Best product ever",
-        //        "rating": 5
-        //    };
-
-        Review.save(newReview, function () {
-            getAllReviews();
+    resty.postNewReview = function (review) {
+        Review.save(review, function () {
+            resty.getAllReviews();
+            resty.newReview = {}
         });
     }
-
 
     resty.updateReview = function (review) {
         updateReview.$update(function () {
             getAllReviews();
         });
     }
-
-
 
     resty.deleteReview = function (review) {
         review.$delete(function () {

@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resty.css" rel="stylesheet">
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -43,7 +44,6 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Profile</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
@@ -58,14 +58,68 @@
 
                 <div class="jumbotron">
                     <div class="container">
-                        <h2>Create new review</h2>
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2>Create new review</h2>
+                            </div>
+                        </div>
 
                         <div class="row">
-                            <a class="btn btn-success btn-lg pull-right" href="#" role="button">Submit</a>
+                            <div class="col-xs-2">
+                                <label for="title">Title:</label>
+                            </div>
+                            <div class="col-xs-8">
+                                <input id="title" class="form-control" ng-model="resty.newReview.title">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label for="author">Author:</label>
+                            </div>
+                            <div class="col-xs-8">
+                                <input id="author" class="form-control" ng-model="resty.newReview.author">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label for="body">Body:</label>
+                            </div>
+                            <div class="col-xs-8">
+                                <textarea id="body" class="form-control" rows="5" ng-model="resty.newReview.body"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label for="body">Review:</label>
+                            </div>
+                            <div class="col-xs-8 new-review-stars">
+                                <a class="icon" ng-click="resty.newReview.rating = 1" role="button">
+                                    <i class="glyphicon" ng-class="(resty.newReview.rating >= 1) ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+                                </a>
+                                <a class="icon" ng-click="resty.newReview.rating = 2" role="button">
+                                    <i class="glyphicon" ng-class="(resty.newReview.rating >= 2) ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+                                </a>
+                                <a class="icon" ng-click="resty.newReview.rating = 3" role="button">
+                                    <i class="glyphicon" ng-class="(resty.newReview.rating >= 3) ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+                                </a>
+                                <a class="icon" ng-click="resty.newReview.rating = 4" role="button">
+                                    <i class="glyphicon" ng-class="(resty.newReview.rating >= 4) ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+                                </a>
+                                <a class="icon" ng-click="resty.newReview.rating = 5" role="button">
+                                    <i class="glyphicon" ng-class="(resty.newReview.rating >= 5) ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <a class="btn btn-success btn-lg pull-right" role="button" ng-click="resty.postNewReview(resty.newReview)">Submit</a>
                         </div>
                     </div>
                 </div>
@@ -82,10 +136,10 @@
                         <span class="glyphicon" ng-class="(review.rating >= 5) ? 'glyphicon-star' : 'glyphicon-star-empty'"></span>
 
                         <div class="row">
-                            <a class="btn btn-primary btn-lg pull-right" href="#" role="button">Edit</a>
+                            <a class="btn btn-primary btn-lg pull-right" role="button">Edit</a>
                         </div>
                         <div class="row">
-                            <a class="btn btn-danger btn-lg pull-right" href="#" role="button" ng-click="resty.deleteReview(review)">Delete</a>
+                            <a class="btn btn-danger btn-lg pull-right" role="button" ng-click="resty.deleteReview(review)">Delete</a>
                         </div>
 
                     </div>
