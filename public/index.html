@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Resty">
+    <meta name="author" content="Alexander G Baldwin">
     <link rel="icon" href="../../favicon.ico">
 
     <title>Starter Template for Bootstrap</title>
@@ -45,7 +44,6 @@
                 <li class="active"><a href="#">Home</a></li>
             </ul>
         </div>
-        <!--/.nav-collapse -->
     </div>
 
 
@@ -57,6 +55,7 @@
 
                 <div class="jumbotron">
                     <div class="container">
+
                         <div class="row">
                             <div class="col-xs-12">
                                 <h2>Create new review</h2>
@@ -110,21 +109,19 @@
                                 <a class="icon" ng-click="resty.newReview.rating = 5" role="button">
                                     <i class="glyphicon" ng-class="(resty.newReview.rating >= 5) ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
                                 </a>
-
                             </div>
-
                         </div>
-
-
 
                         <div class="row">
                             <a class="btn btn-success btn-lg pull-right" role="button" ng-click="resty.postNewReview(resty.newReview)">Submit</a>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="jumbotron" ng-repeat="review in resty.reviews">
                     <div class="container">
+
                         <h1>{{review.title}}</h1>
                         <h2>Author: {{review.author}}</h2>
                         <p>{{review.body}}</p>
@@ -137,6 +134,7 @@
                         <div class="row">
                             <a class="btn btn-primary btn-lg pull-right" role="button" ng-click="resty.updateReview(review)">Edit</a>
                         </div>
+
                         <div class="row">
                             <a class="btn btn-danger btn-lg pull-right" role="button" ng-click="resty.deleteReview(review)">Delete</a>
                         </div>
@@ -147,12 +145,7 @@
             </div>
         </div>
     </div>
-    <!-- /.container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
