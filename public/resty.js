@@ -32,7 +32,7 @@ app.controller('restyController', function ($scope, Review) {
 
     resty.updateReview = function (review) {
         updateReview.$update(function () {
-            getAllReviews();
+            resty.getAllReviews();
         });
     }
 
@@ -42,7 +42,7 @@ app.controller('restyController', function ($scope, Review) {
         });
     }
 
-    //Init on page load
+    //Init on app load
     resty.getAllReviews();
 
 });
