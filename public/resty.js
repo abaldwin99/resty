@@ -1,8 +1,8 @@
 var app = angular.module('restyApp', ['ngRoute', 'ngResource']);
 
 
-app.factory('Post', function ($resource) {
-    return $resource('/posts/:id', {
+app.factory('Review', function ($resource) {
+    return $resource('/reviews/:id', {
         id: '@id'
     }, {
         update: {
@@ -12,42 +12,44 @@ app.factory('Post', function ($resource) {
 });
 
 
-app.controller('restyController', function ($scope, Post) {
+app.controller('restyController', function ($scope, Review) {
     var resty = this;
     resty.go = 5;
 
-    var posts = Post.query(function () {
-        resty.go = posts;
+    var reviews = Review.query(function () {
+        resty.go = reviews;
     });
 
-    var onePost = Post.get({
+    var oneReview = Review.get({
         id: 2
     }, function () {
-        console.log(onePost.title)
+        console.log(oneReview.title);
     });
 
-    newPost = {
-        "title": "asdf",
-        "author": "asdf",
-    }
-    Post.save(newPost, function () {
-        console.log('saved')
+    newReview = {
+        "title": "Awesome",
+        "author": "Bob",
+        "body": "Best product ever",
+        "rating": 5
+    };
+    Review.save(newReview, function () {
+        console.log('saved');
     });
 
-    var updatePost = Post.get({
+    var updateReview = Review.get({
         id: 4
     }, function () {
-        updatePost.title = 'something else';
-        updatePost.$update(function () {
-            console.log('updated id 1')
+        updateReview.title = 'something else';
+        updateReview.$update(function () {
+            console.log('updated id 1');
         });
     });
 
-    var deletePost = Post.get({
-        id: 8
+    var deleteReview = Review.get({
+        id: 2
     }, function () {
-        deletePost.$delete(function () {
-            console.log('id 3 is deleted')
+        deleteReview.$delete(function () {
+            console.log('id 3 is deleted');
         });
     });
 
