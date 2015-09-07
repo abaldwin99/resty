@@ -21,31 +21,33 @@ app.controller('restyController', function ($scope, Review) {
         var reviews = Review.query(function () {
             resty.reviews = reviews;
         });
-    }
+    };
 
     resty.postNewReview = function (review) {
         Review.save(review, function () {
+            // Calling getAllReviews() here is a quick hack to sync the rewiews.
+            // In a real application we would manipulate the client side without hitting the DB twice.
             resty.getAllReviews();
-            resty.newReview = {}
+            resty.newReview = {};
         });
-    }
+    };
 
     resty.updateReview = function (review) {
-        review.title = prompt('Title', review.title)
-        review.author = prompt('Author', review.author)
-        review.body = prompt('Body', review.body)
-        review.rating = prompt('Rating', review.rating)
+        review.title = prompt('Title', review.title);
+        review.author = prompt('Author', review.author);
+        review.body = prompt('Body', review.body);
+        review.rating = prompt('Rating', review.rating);
 
         review.$update(function () {
             resty.getAllReviews();
         });
-    }
+    };
 
     resty.deleteReview = function (review) {
         review.$delete(function () {
             resty.getAllReviews();
         });
-    }
+    };
 
     //Init on app load
     resty.getAllReviews();
