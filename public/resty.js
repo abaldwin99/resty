@@ -6,7 +6,7 @@ app.factory('Review', function ($resource) {
         id: '@id'
     }, {
         update: {
-            method: 'PUT' // this method issues a PUT request
+            method: 'PUT'
         }
     });
 });
