@@ -1,38 +1,25 @@
 {
   "reviews": [
     {
-      "title": "The Game",
-      "author": "billy bob",
-      "body": "sadfsafdadsfadsf",
-      "rating": 2,
-      "id": 7
+      "title": "Of Mice and Men",
+      "author": "John Steinbeck",
+      "body": "Tells the story of George Milton and Lennie Small, two displaced migrant ranch workers, who move from place to place in search of new job opportunities during the Great Depression in California, United States.",
+      "rating": 4,
+      "id": 1
     },
     {
-      "title": "asfdasfdasfd",
-      "author": "asdfasdfasfd",
-      "body": "adsfsadfsadf",
-      "id": 8
+      "author": "George Orwell",
+      "title": "Nineteen Eighty-Four",
+      "body": "The novel is set in Airstrip One (formerly known as Great Britain), a province of the superstate Oceania in a world of perpetual war, omnipresent government surveillance and public manipulation, dictated by a political system euphemistically named English Socialism (or Ingsoc in the government's invented language, Newspeak) under the control of a privileged Inner Party elite, that persecutes individualism and independent thinking as \"thoughtcrime\"",
+      "rating": 5,
+      "id": 2
     },
     {
-      "rating": 3,
-      "title": "asdfadsf",
-      "author": "adsfasdf",
-      "body": "adsfasfd",
-      "id": 9
-    },
-    {
-      "rating": 3,
-      "title": "asdfasfdasfd",
-      "author": "sadfadsf",
-      "body": "safdasdfadsfasfdsafdadsfasfdasfd",
-      "id": 10
-    },
-    {
-      "rating": 2,
-      "title": "test",
-      "author": "test",
-      "body": "test",
-      "id": 11
+      "title": "2001: A Space Odyssey",
+      "author": "Arthur C. Clarke",
+      "body": "An imposing black structure provides a connection between the past and the future in this enigmatic adaptation of a short story by revered sci-fi author Arthur C. Clarke. When Dr. Dave Bowman (Keir Dullea) and other astronauts are sent on a mysterious mission, their ship's computer system, HAL, begins to display increasingly strange behavior, leading up to a tense showdown between man and machine that results in a mind-bending trek through space and time.",
+      "rating": 4,
+      "id": 3
     }
   ]
 }
